@@ -1,0 +1,16 @@
+<h1>Pierwszy random z tablicy w kontrolerze</h1>
+{% if n > 0 %}
+    {% for i in 1..n %}
+        {{ random(start..end) }}<br>
+    {% endfor %}
+{% else %}
+    <p>Tablica jest pusta</p>
+{% endif %}
+<h1>Drugi random z range w twigu</h1>
+{% if n > 0 %}
+    {% for i in 1..n %}
+        {{ random(start..end) }}<br>
+    {% endfor %}
+{% else %}
+    <p>Tablica jest pusta</p>
+{% endif %}

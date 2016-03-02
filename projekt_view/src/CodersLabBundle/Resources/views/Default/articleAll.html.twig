@@ -1,0 +1,7 @@
+{% extends "CodersLabBundle:Default:mainTemplate.html.twig" %}
+{% block title %}articleAll{% endblock %}
+{% block div %}
+{% for allArticle in articles %}
+    {% include 'CodersLabBundle:Default:article.html.twig' with {'article':allArticle} %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,6 @@
+{% for tag in allTags  %}
+    <h1>{{ tag.tagText }}</h1>
+    {% for post in tag.posts %}
+        <a href="{{ path('getPost', {'id': post.id}) }}">Post {{ post.id }}</a><br>
+    {% endfor %}
+{% endfor %}

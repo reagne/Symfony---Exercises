@@ -1,0 +1,68 @@
+<?php
+
+namespace exerciseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tag
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Tag
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tagText", type="string", length=50)
+     */
+    private $tagText;
+
+    /**
+     * @ORM\ManyToMany(targetEntity = "Post", mappedBy = "tags")
+     */
+    private $posts;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set tagText
+     *
+     * @param string $tagText
+     * @return Tag
+     */
+    public function setTagText($tagText)
+    {
+        $this->tagText = $tagText;
+
+        return $this;
+    }
+
+    /**
+     * Get tagText
+     *
+     * @return string 
+     */
+    public function getTagText()
+    {
+        return $this->tagText;
+    }
+}

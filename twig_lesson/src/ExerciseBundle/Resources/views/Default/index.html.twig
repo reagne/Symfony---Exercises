@@ -1,0 +1,36 @@
+Hello {{name}}!<br>
+
+{#dwa sposoby na filtry:#}
+{{ name | length }}<br>
+{% filter length %}{{name}}{% endfilter %} <br>{#tutaj nie może być żadnych spacji między klamrami, bo je także będzie liczył do długości zmiennej#}
+
+{#działanie ifów#}
+{% if name | length > 5 %} {# przy if'ach filtrów nie wstawiamy w nawiasach#}
+    {{ name | upper }}<br>
+{% else %}
+    <p><font color="red">imię jest za krótkie</font></p>
+{% endif %}
+
+{#działanie ifów z operatorem logicznym#}
+{% if name in good%}
+   <p>Dobre imię</p>
+{% else %}
+   <p>Inne imię</p>
+{% endif %}
+
+{#działanie pętli for#}
+{% if name not in good %}
+    <p>Dobry login:</p>
+   {% for login in good %} {# login to jest jak wartość po 'as'w foreach, można ją sobie nazawać jak się chce#}
+        <p>{{ login }}</p>
+   {% endfor %}
+{% else %}
+   <p>Dobry login</p>
+{% endif %}
+
+{#załączanie szablonów#}
+<ul>
+    {% for login in good %}
+        <li>{% include 'ExerciseBundle:Default:person.html.twig' with {'name':login} %}</li> {#name jest z pliku includowanego#}
+    {% endfor %}
+</ul>

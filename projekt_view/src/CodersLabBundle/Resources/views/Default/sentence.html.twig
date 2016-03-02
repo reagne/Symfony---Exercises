@@ -1,0 +1,11 @@
+{% if n > 0 %}
+    {% for i in 1..n %}
+        {% if tekst|length %}
+            <p>{{ tekst }}</p>
+        {% else %}
+            <p>Symfony jest fajne</p>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <p>Czy Symfony jest fajne?</p>
+{% endif %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+        <html>
+<head>
+</head>
+<body>
+<fieldset>
+    Stwórz nową książkę
+    <form action="{{ path('createBook') }}" method="POST">
+        <p><label>Tytuł: </label><input type="text" name="title"></p>
+        <p><label>Opis: </label><input type="text" name="description"></p>
+        <p><label>Rating: </label><input type="text" name="rating"></p>
+        <p><input type="submit" value="Dodaj"></p>
+    </form>
+</fieldset>
+</body>
+</html>

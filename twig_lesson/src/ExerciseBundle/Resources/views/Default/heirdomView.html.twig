@@ -1,0 +1,13 @@
+{#dzidziczenie#}
+{% extends 'ExerciseBundle:Default:heirdom.html.twig' %}
+{% block title %}
+    {{ parent() }} - Lista osób
+{% endblock %}
+{% block content %}
+   <ul>
+        {% for login in good %}
+            <li>{% include 'ExerciseBundle:Default:person.html.twig' with {'name':login} %}</li> {#name jest z pliku includowanego#}
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

@@ -1,0 +1,5 @@
+<ul>
+    {% for book in books %}
+        <li>{{ book.Title }} <a href="{{ path('bookById', {'id': book.id}) }}"> Zobacz >></a></li>
+    {% endfor %}
+</ul>

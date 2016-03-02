@@ -1,0 +1,13 @@
+{%  if user is null %}
+    <p>Nie ma takiego użytkownika</p>
+{% else %}
+    <h1>{{ user.username }}</h1>
+    <p>E-mail: {{ user.email }}</p>
+    <p>Wiek: {{ user.age }}</p>
+
+    <ul>
+        {%  for post in user.posts %}
+            <li><a href="{{ path('getPost', {'id':post.id}) }}">Post {{ post.id }}</a></li>
+        {%  endfor %}
+    </ul>
+{% endif %}

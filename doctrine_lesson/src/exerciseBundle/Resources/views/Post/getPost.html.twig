@@ -1,0 +1,23 @@
+{% if post is null %}
+    <p>Nie ma takiego postu</p>
+{% else %}
+    <h1>{{ post.title }}</h1>
+    <h2>Ocena: {{ post.rating }}</h2>
+    <p>{{ post.postText }}</p>
+    <p>Autor: {{ post.user.username }}</p>
+
+    <h3>Inne posty użytkownika:</h3>
+    <ul>
+    {% for onepost in post.user.posts %}
+        {% if post.id != onepost.id %}
+            <li><a href="{{ path('getPost', {'id':onepost.id}) }}">Post {{ onepost.id }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    <p>Tagi:</p>
+    <ul>
+    {% for onetag in post.tags %}
+        <li>{{ onetag.tagText }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}

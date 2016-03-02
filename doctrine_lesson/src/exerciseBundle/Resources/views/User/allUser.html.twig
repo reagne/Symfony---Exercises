@@ -1,0 +1,5 @@
+{% for oneUser in users %}
+    {%  include 'exerciseBundle:User:oneUser.html.twig' with {'user':oneUser} %}
+    {% else %}
+        <p>Nie ma żadnych użytkowników</p>
+{% endfor %}

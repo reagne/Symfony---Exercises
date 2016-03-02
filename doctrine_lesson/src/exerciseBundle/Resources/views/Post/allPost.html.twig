@@ -1,0 +1,5 @@
+{% for onePost in posts %}
+    {% include 'exerciseBundle:Post:getPost.html.twig' with {'post':onePost} %}
+    {% else %}
+        <p>Nie ma postów</p>
+{% endfor %}

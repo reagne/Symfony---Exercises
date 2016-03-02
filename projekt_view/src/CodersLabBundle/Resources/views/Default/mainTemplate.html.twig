@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Tytuł strony{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <a href="{{ path('coderslab_views_random', {'start': '4','end': '10', 'n': '5'}) }}">Random</a>
+            <a href="{{ path('coderslab_views_sentence', {'n': '3'}) }}">Sentence</a>
+            <a href="{{ path('coderslab_views_username', {'username': 'World'}) }}">Username</a>
+            <a href="{{ url('coderslab_views_showarticle', {'id': '1'}) }}">Article</a>
+            <a href="{{ url('coderslab_views_showallarticle') }}">AllArticle</a>
+        </nav>
+        <p>URL: {{ url('coderslab_views_showarticle', {'id': '1'}) }}</p>
+        <p>PATH: {{ path('coderslab_views_showarticle', {'id': '1'}) }}</p>
+        <h1>{% block controller %}ViewsController{% endblock %}</h1>
+        <div>
+            {% block div %}{% endblock %}
+        </div>
+        <footer>
+            {% render '/linksToArticle' %}
+        </footer>
+    </body>
+</html>
